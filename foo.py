@@ -1,9 +1,16 @@
 import asyncio
-import websockets
 import json
 
-async def handle_connection(websocket, path):
-  print("Client connected!")
+import websockets
+import websockets.connection
+import websockets.legacy
+import websockets.legacy.server
+import websockets.uri
+
+
+async def handle_connection(websocket):
+  
+  print(f"Client connected! at ")
   try:
     while True:
       message = input("User: ")
